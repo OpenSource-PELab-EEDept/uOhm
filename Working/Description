@@ -1,0 +1,6 @@
+The device works on the basic principle of Ohm's law, i.e. V = IR to measure resistances
+An OP-AMP controlled MOSFET drives a large current (upto 1.5A) through the sample
+This current gives rise to a voltage drop as it passes through the sample. This voltage drop is very small due to the high conductivity of the sample (intended application)
+This voltage drop is then amplified by the instrumentation amplifier and fed to the Arduino's internal ADC
+Current is measured by a Hall-effect based current sensing module, which outputs an analog voltage that is fed to the Arduino's internal ADC
+The Resistance, Current and Voltage values are then calculated using the values fed to the ADC and displayed on the OLED display
