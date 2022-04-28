@@ -13,8 +13,16 @@
 1x SSD1306 128*64 I2C OLED Display (INR 269 @ https://robu.in/product/0-96-inch-i2c-iic-oled-lcd-module-4pin-with-vcc-gnd-blue/ )
 1x MTS-103 SPDT(ON-OFF-ON) Switch (INR 59 @ https://probots.co.in/toggle-switch-spdt-on-off-on-3-pin-mts-103.html )
 1x AOD452A MOSFET (INR 23 @ https://www.sunrom.com/m/6682 )
+1x 150kΩ resistor
+1x 68Ω resistor
+1x 175Ω resistor
+1x 330Ω resistor
+1x 660Ω resistor
+1x 1kΩ resistor
+5x 20kΩ resistor
 1x 1k Potentiometer
 1x 0.01 Ohm current sense SMD resistor
+2x 8-Pin DIP IC Beds (Optional)  
    2.54mm pitch female headers (As required)
    2.54mm pitch male headers (As required)
    2.54mm pitch 2-row male headers (As required)
