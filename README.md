@@ -5,5 +5,5 @@ Low-Cost micro-ohm measurement platform for conducting materials
 
 All components selected for this project are commercially available on Indian websites (robu.in, sunrom.com, probots.co.in). Product links mentioned in the parts list are merely suggestions and subject to ability. None of the contributors to this project are associated to any such website and do not intend to promote the former or earn any commission from any sales generated from the links.
 
-All the 3D models generated (for the platform and casing) have been generated using FreeCAD, an Open-Source CAD program
-The Schematic and PCB layout has been generated on EasyEDA, an Open-Source Circuit Design suite
+All the 3D models generated (for the platform and casing) have been generated using FreeCAD, an Open-Source CAD program.
+The Schematic and PCB layout has been generated on EasyEDA, an Open-Source Circuit Design suite.
