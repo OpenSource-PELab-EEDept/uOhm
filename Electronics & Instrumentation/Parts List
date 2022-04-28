@@ -1,0 +1,22 @@
+1x Arduino Nano/ Compatible board with on-board USB-UART conversion (CH340)
+1x USB Cable for Arduino
+1x 18650 Li-ion rechargeable cell
+1x Battery holder for 18650
+1x TP4056 USB Charging Module for Li-ion cell (INR 29 @ https://robu.in/product/tp4056-1a-lipo-battery-charging-board-micro-usb-with-current-protection/ )
+1x LM358 OP-AMP IC (INR49 @ https://robu.in/product/lm358p-pdip-8-high-gain-operational-amplifier-pack-of-5-ics/ )
+1x INA128P Instrumentation Amplifier (INR199 @ https://robu.in/product/ina128-low-power-instrumentation-amplifier-ic-dip-8-package/ )
+1x LM7805 Voltage regulator IC
+1x 5V 600mA USB Boost converter module (INR 49 @ https://robu.in/product/dc-dc-boost-module-0-9v5v-to-5v-600ma-usb-step-up-board-5v-output/ )
+1x LM2596 DC-DC Buck converter module (INR 99 @ https://probots.co.in/lm2596-switching-type-dc-to-dc-step-down-regulator-buck-module.html )
+1x 2.8-5.5V to ±12V DC conversion module (INR 111 @ https://robu.in/product/2-8v-5-5v-to-%c2%b112v-dc-conversion-power-module/ )
+1x ACS712 5A Current Sensor Module (INR 149 @ https://robu.in/product/5a-range-current-sensor-module-acs712/ )
+1x SSD1306 128*64 I2C OLED Display (INR 269 @ https://robu.in/product/0-96-inch-i2c-iic-oled-lcd-module-4pin-with-vcc-gnd-blue/ )
+1x MTS-103 SPDT(ON-OFF-ON) Switch (INR 59 @ https://probots.co.in/toggle-switch-spdt-on-off-on-3-pin-mts-103.html )
+1x AOD452A MOSFET (INR 23 @ https://www.sunrom.com/m/6682 )
+1x 1k Potentiometer
+1x 0.01 Ohm current sense SMD resistor
+   2.54mm pitch female headers (As required)
+   2.54mm pitch male headers (As required)
+   2.54mm pitch 2-row male headers (As required)
+   2.54mm pitch 2-pin shorting jumpers (As required)
+   Wire (As required)
