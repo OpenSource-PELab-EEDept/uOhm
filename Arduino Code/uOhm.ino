@@ -15,6 +15,14 @@ int SUM = 0;
 int READINGS[WINDOW_SIZE];
 int AVERAGED = 0;
 
+// Initialising Variables for moving window filtering of instrumentation amp output
+#define WINDOW_SIZE_V 20
+int INDEX_V = 0;
+int VALUE_V = 0;
+int SUM_V = 0;
+int READINGS_V[WINDOW_SIZE_V];
+int AVERAGED_V = 0;
+
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);// Initialising OLED display
 
@@ -76,11 +84,17 @@ void loop() {
   READINGS[INDEX] = VALUE;           // Add the newest reading to the window
   SUM = SUM + VALUE;                 // Add the newest reading to the sum
   INDEX = (INDEX+1) % WINDOW_SIZE;   // Increment the index, and wrap to 0 if it exceeds the window size
-
   AVERAGED = SUM / WINDOW_SIZE;      // Divide the sum of the window by the window size for the result
 
+//Moving window averaging of Instrumentation Amplifier output
+  SUM_V = SUM_V - READINGS_V[INDEX_V];       // Remove the oldest entry from the sum
+  VALUE_V = analogRead(ADCin0);        // Read the next sensor value
+  READINGS_V[INDEX_V] = VALUE_V;           // Add the newest reading to the window
+  SUM_V = SUM_V + VALUE_V;                 // Add the newest reading to the sum
+  INDEX_V = (INDEX_V+1) % WINDOW_SIZE_V;   // Increment the index, and wrap to 0 if it exceeds the window size
+  AVERAGED_V = SUM_V / WINDOW_SIZE_V;      // Divide the sum of the window by the window size for the result
 
-  ADCValV = analogRead(ADCin0)/DFac; //Calculation of voltage from ADC value and gain-specific division factor
+  ADCValV = AVERAGED_V/DFac; //Calculation of voltage from ADC value and gain-specific division factor
   ADCValI = ((((AVERAGED)-512.00)/38.00)+Iadd); //Calculation of current from smoothed ADC value 
   Serial.println(ADCValI);           //UART output of calculated current
   delay(25); 
