@@ -1,1 +1,14 @@
 This folder contains instructions and tutorial material on how to properly use the system 
+
+USAGE INSTRUCTIONS -
+After successfully assembling and programming the system - 
+-Place the sample on the sping-loaded contact platform/grasp both ends of sample with crocodile clips
+-Place jumpers on desired gain levels and corresponding gain selector pins
+-Turn the potentiometer screw to change current passing through sample
+-Place probes on sample with probe terminals apart by a known distance 'd' apart
+-Take multiple readings for resistance value
+
+-To find resistivity of material, use the formula - ρ = RA/d,
+where R = Resistance measured between two probe terminals
+      A = Cross-sectional area of the sample
+      d = distance between probe terminals
