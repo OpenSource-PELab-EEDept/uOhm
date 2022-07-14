@@ -8,18 +8,18 @@
 
 
 // Initialising Variables for moving window filtering of current sensor output
-#define WINDOW_SIZE 20
+#define WINDOW_SIZE 30
 int INDEX = 0;
 int VALUE = 0;
-int SUM = 0;
+long SUM = 0;
 int READINGS[WINDOW_SIZE];
 int AVERAGED = 0;
 
 // Initialising Variables for moving window filtering of instrumentation amp output
-#define WINDOW_SIZE_V 20
+#define WINDOW_SIZE_V 100
 int INDEX_V = 0;
 int VALUE_V = 0;
-int SUM_V = 0;
+long SUM_V = 0;
 int READINGS_V[WINDOW_SIZE_V];
 int AVERAGED_V = 0;
 
@@ -28,10 +28,10 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);// Initialising
 
 float ADCin0 = A6;//Voltage sense input pin
 float ADCin1 = A7;//Current sense input pin
-float DFac = 0 ;//Gain-wise division factor(Initial value)
+float DFac = 0.13 ;//Gain-wise division factor(Initial value)
 float ADCValV;//Voltage value
 float ADCValI;//Current value
-float Iadd = 0.11;//Addition factor for current
+float Iadd = 0.0;//Addition factor for current
 float Res = 0;//Calculated resistance between points of the probe (Initial value)
 //Initialising pins for gain selector, GainXYZ/valXYZ correspond to a gain resistor value of XYZ Ohms
 const float Gain68 = 3;
@@ -68,11 +68,11 @@ void loop() {
   val330 = digitalRead(Gain330);
   val660 = digitalRead(Gain660);
   val1k = digitalRead(Gain1k);
-  if (val68 == 1.00) DFac = 171;
-  if (val175 == 1.00) DFac = 64;
-  if (val330 == 1.00) DFac = 33.66;
-  if (val660 == 1.00) DFac = 16;
-  if (val1k == 1.00) DFac = 10.37;
+  if (val68 == 1.00) DFac = 109.16;
+  if (val175 == 1.00) DFac = 57.196;
+  if (val330 == 1.00) DFac = 30.798;
+  if (val660 == 1.00) DFac = 15.42;
+  if (val1k == 1.00) DFac = 10.31;
   display.clearDisplay(); 
   display.setTextSize(2);          
   display.setTextColor(WHITE);     
@@ -95,7 +95,7 @@ void loop() {
   AVERAGED_V = SUM_V / WINDOW_SIZE_V;      // Divide the sum of the window by the window size for the result
 
   ADCValV = AVERAGED_V/DFac; //Calculation of voltage from ADC value and gain-specific division factor
-  ADCValI = ((((AVERAGED)-512.00)/38.00)+Iadd); //Calculation of current from smoothed ADC value 
+  ADCValI = (((((AVERAGED)-512.00)+8)/38.5)-0.04); //Calculation of current from smoothed ADC value 
   Serial.println(ADCValI);           //UART output of calculated current
   delay(25); 
 
